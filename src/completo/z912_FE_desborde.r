@@ -248,7 +248,12 @@ AgregarVariables  <- function( dataset )
   dataset[ , mvr_mpagominimo         := mv_mpagominimo  / mv_mlimitecompra ]
 
   #Aqui debe usted agregar sus propias nuevas variables
-
+  
+  #ori
+  
+  dataset[  , debito_sobre_edad  := ccunta_debitos_automaticos / cliente_edad ]
+  dataset[  , servicios_sobre_mpayroll  :=  (mpagodeservicios + mpagomiscuentas) / mpayroll ]
+  
   #valvula de seguridad para evitar valores infinitos
   #paso los infinitos a NULOS
   infinitos      <- lapply(names(dataset),function(.name) dataset[ , sum(is.infinite(get(.name)))])
