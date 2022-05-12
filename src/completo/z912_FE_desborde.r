@@ -251,7 +251,7 @@ AgregarVariables  <- function( dataset )
   
   #ori
   
-  dataset[  , debito_sobre_edad  := cunta_debitos_automaticos / cliente_edad ]
+  dataset[  , debito_sobre_edad  := ccuenta_debitos_automaticos / cliente_edad ]
   dataset[  , servicios_sobre_mpayroll  :=  (mpagodeservicios + mpagomiscuentas) / mpayroll ]
   
   #valvula de seguridad para evitar valores infinitos
