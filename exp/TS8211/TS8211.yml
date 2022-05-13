@@ -14,7 +14,7 @@ experiment:
 
 
 param:
-  semilla: 102191
+  semilla: 981642
 
   #donde aplico el modelo final, los datos sin clase
   future:
@@ -29,10 +29,10 @@ param:
   train:
     periodos: [ ]
     rango:
-      desde:  202001
+      desde:  202007
       hasta:  202009
-    excluir: [ ]
-    undersampling: [ ]  #ATENCION  sin undersampling
+    excluir: [ 202006 ]
+    undersampling: [ {clase: "CONTINUA", prob: 0.1 } ]
 
   #donde valido
   validate:
@@ -58,8 +58,8 @@ param:
     rango:
       desde:  202001
       hasta:  202011
-    excluir: [ ]
-    undersampling: [  ]
+    excluir: [ 202006 ]
+    undersampling: [ {clase: "CONTINUA", prob: 0.1 } ]
     
 
   files:
