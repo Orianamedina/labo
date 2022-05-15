@@ -29,7 +29,7 @@ param:
  #los parametros que son un solo valor  NO van a la B.O. y se pasan fijos
   lightgbm:
 
-    learning_rate:      [ 0.02, 0.3]
+    learning_rate:      [ 0.02, 0.9]
     feature_fraction:   [ 0.85296562 ]
     num_leaves:         [ 16, 1024, "integer" ]
     min_data_in_leaf:   [  0, 8000, "integer" ]
@@ -58,7 +58,7 @@ param:
     objective: "binary"
     boost_from_average: TRUE
     force_row_wise: TRUE
-    feature_pre_filter: FALSE
+    feature_pre_filter: TRUE
     boosting: "gbdt"
     num_threads:  0   #usa todas las vCPUs
     verbosity: -100
@@ -66,7 +66,7 @@ param:
 
   #Optimizacion Bayesiana
   BO:
-    iterations: 30             #cantidad de iteraciones
+    iterations: 100             #cantidad de iteraciones
 
     noisy: TRUE
     minimize: FALSE
